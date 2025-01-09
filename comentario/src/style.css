@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(38, 37, 59);
+}
+
+.mensaje {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+
+  .container-mensaje {
+    width: 30%;
+    height: 0;
+    background-color: rgb(61, 62, 74);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.1rem;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 1s all;
+  }
+
+  .mensaje-activo {
+    width: 30%;
+    height: 50vh;
+    background-color: rgb(61, 62, 74);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    font-size: 1.1rem;
+    border-radius: 20px;
+    transition: 1s all;
+  }
+
+  .boton {
+    margin-top: 20px;
+    background-color: rgb(53, 146, 46);
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 1s;
+
+    i {
+      transform: rotate(45deg);
+      transition: 1s;
+      font-size: 1.5rem;
+    }
+  }
+
+  .boton-activo {
+    background-color: rgb(207, 65, 65);
+    i {
+      transform: rotate(180deg);
+    }
+  }
+}
