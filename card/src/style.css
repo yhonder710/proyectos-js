@@ -80,6 +80,11 @@ body {
         color: rgb(8, 84, 8);
         cursor: pointer;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.34);
+        transition: 500ms;
+
+        &:hover {
+          margin-top: calc(-30px);
+        }
       }
     }
 
@@ -92,6 +97,11 @@ body {
       border-radius: 30px;
       margin-top: 60px;
       cursor: pointer;
+      transition: 500ms;
+
+      &:hover {
+        scale: 1.1;
+      }
     }
   }
 
