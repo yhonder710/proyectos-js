@@ -2,13 +2,126 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-.contenido-principal {
-  img {
-    position: fixed;
+main {
+  background-color: #000522;
+
+  section {
+    position: relative;
     width: 100%;
     height: 100vh;
-    font-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(to top, #000522, transparent);
+      z-index: 1;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+
+    .personaje {
+      top: 45%;
+      object-fit: contain;
+    }
+
+    #text {
+      color: white;
+      position: relative;
+      font-size: 10vw;
+    }
   }
+
+  .sec {
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px 80px;
+      h2 {
+        color: #1b224b;
+        font-size: 4vw;
+        margin-bottom: 20px;
+      }
+      p {
+        color: #fff;
+      }
+    }
+  }
+}
+
+/*Loading*/
+
+.cargando-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1000;
+  background: rgb(38, 38, 38);
+
+  p {
+    font-size: 2rem;
+    color: white;
+    width: 11%;
+    margin-top: 20px;
+  }
+}
+
+.efecto-container {
+  width: 110px;
+  height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .efecto {
+    background-color: rgba(255, 255, 255, 0.454);
+    border-radius: 50%;
+    animation: loanding 1.5s infinite ease-in-out;
+  }
+}
+
+@keyframes loanding {
+  10% {
+    opacity: 0.3;
+    width: 0;
+    height: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}
+
+.loaded {
+  opacity: 0;
+  transition: 1.2s ease-out;
+  z-index: -1;
 }
